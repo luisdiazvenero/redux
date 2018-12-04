@@ -11,7 +11,8 @@ import reducer from '../reducers/data.js';
 
 const initialState = {
     data: {
-      ...data
+      ...data,
+      search: [],
     }
 }
 
