@@ -9,16 +9,20 @@ function Categories(props) {
     <div className="Categories">
       <Search />
       {
+        props.isLoading &&
+        <p>Buscando tus videos favoritos..</p>
+      }
+      {
         props.search.map((item)=>{
-          return <Media {...item} key={item.id}/>
+          return <Media openModal={props.handleOpenModal} {...item.toJS()} key={item.get('id')}/>
         })
       }
       {
         props.categories.map((item) =>{
           return (
             <Category
-              key={item.id}
-              {...item}
+              key={item.get('id')}
+              {...item.toJS()}
               handleOpenModal={props.handleOpenModal}
             />
           )

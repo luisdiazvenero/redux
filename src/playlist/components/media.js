@@ -18,7 +18,7 @@ class Media extends PureComponent {
     // this.setState({
     //   author: 'Ricardo Celis',
     // })
-    this.props.openModal(this.props);
+    this.props.openModal(this.props.id);
   }
   render() {
     const styles = {
@@ -39,9 +39,10 @@ class Media extends PureComponent {
             height={160}
             className="Media-image"
           />
-          <h3 className="Media-title">{this.props.title}</h3>
-          <p className="Media-author">{this.props.author}</p>
+
         </div>
+        <h3 className="Media-title">{this.props.title}</h3>
+        <p className="Media-author">{this.props.author}</p>
       </div>
     )
   }
@@ -55,4 +56,3 @@ Media.propTypes = {
 }
 
 export default Media;
-
